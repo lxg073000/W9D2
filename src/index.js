@@ -1,10 +1,9 @@
 console.log("Webpack is working!");
 
 const MovingObject = require("./moving_object");
-const GameView = require("./game_view")
+const GameView = require("./game_view");
 // const Asteroid = require("./asteroid.js");
 const Game = require("./game.js");
-
 
 // Make constructor in window
 // window.MovingObject = MovingObject;
@@ -24,12 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
     color: "black",
   });
 
-//   mo.draw(ctx);
+  //   mo.draw(ctx);
 
-  const game =  new Game();
+  const game = new Game();
 
   const gm = new GameView(game, ctx);
 
   gm.start();
-  
 });
