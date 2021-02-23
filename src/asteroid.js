@@ -3,7 +3,7 @@ const Util = require("./utils.js");
 
 function Asteroid(obj) {
   Asteroid.COLOR = "green";
-  Asteroid.RADIUS = 50;
+  Asteroid.RADIUS = 20;
   Asteroid.SPEED = 5;
 
   obj.color = Asteroid.COLOR;

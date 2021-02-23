@@ -1,17 +1,19 @@
 console.log("Webpack is working!");
 
 const MovingObject = require("./moving_object");
-const Asteroid = require("./asteroid.js");
+const GameView = require("./game_view")
+// const Asteroid = require("./asteroid.js");
+const Game = require("./game.js");
+
 
 // Make constructor in window
-window.MovingObject = MovingObject;
-window.Asteroid = Asteroid;
+// window.MovingObject = MovingObject;
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM loaded");
   const canvasEl = document.getElementById("game-canvas");
-  canvasEl.height = 500;
-  canvasEl.width = 700;
+  canvasEl.height = 1000;
+  canvasEl.width = 1500;
 
   const ctx = canvasEl.getContext("2d");
 
@@ -22,10 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
     color: "black",
   });
 
-  mo.draw(ctx);
+//   mo.draw(ctx);
 
-  const as = new Asteroid({
-    pos: [200, 400],
-  });
-  as.draw(ctx);
+  const game =  new Game();
+
+  const gm = new GameView(game, ctx);
+
+  gm.start();
+  
 });
